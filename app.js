@@ -1,5 +1,5 @@
 /* ProntUp Remesas – comparador de costos de envío (EE. UU. → Centroamérica y México).
-   Datos verificados el 29 sep 2026. Para actualizar precios, edita PROVIDERS más abajo. */
+   Datos verificados el 21 oct 2026 (Finabien: 29 sep 2026). Para actualizar precios, edita PROVIDERS más abajo. */
 (function () {
   'use strict';
 
@@ -17,7 +17,8 @@
       fxCost: 'tipo de cambio', noMargin: 'sin margen de tipo de cambio', fxUnmeasured: 'margen de tipo de cambio aún sin medir',
       quote: 'Cotiza en su sitio', onlyAt1000: 'Tarifa publicada solo para $1,000. Cotiza tu monto en su sitio.',
       cashTax: 'incluye 1% de impuesto federal',
-      verified: 'Verificado en {site}, 29 sep 2026', wbFx: ' · tipo de cambio: Banco Mundial, ago 2025',
+      verified: 'Verificado en {site}, {date}',
+      dates: { oct21: '21 oct 2026', sep29: '29 sep 2026' }, wbFx: ' · tipo de cambio: Banco Mundial, ago 2025',
       bank: 'Depósito a cuenta', cash: 'Retiro en efectivo', go: 'Ir a {name}',
       cashBanner: 'Pagar en efectivo suma 1% de impuesto federal de EE. UU. Con cuenta bancaria o tarjeta no pagas ese impuesto.',
       cashEmpty: 'Las opciones más baratas se pagan con cuenta o tarjeta. Para pagar en efectivo, cotiza en las agencias de abajo.',
@@ -57,7 +58,8 @@
       fxCost: 'exchange rate', noMargin: 'no exchange-rate markup', fxUnmeasured: 'exchange-rate markup not yet measured',
       quote: 'Get a quote on their site', onlyAt1000: 'Fee published for $1,000 only. Quote your amount on their site.',
       cashTax: 'includes 1% federal tax',
-      verified: 'Verified on {site}, Sep 29, 2026', wbFx: ' · exchange rate: World Bank, Aug 2025',
+      verified: 'Verified on {site}, {date}',
+      dates: { oct21: 'Oct 21, 2026', sep29: 'Sep 29, 2026' }, wbFx: ' · exchange rate: World Bank, Aug 2025',
       bank: 'Bank deposit', cash: 'Cash pickup', go: 'Go to {name}',
       cashBanner: 'Paying in cash adds a 1% US federal tax. Pay from a bank account or card and you skip it.',
       cashEmpty: 'The cheapest options require a bank account or card. To pay in cash, get quotes from the agencies below.',
@@ -97,7 +99,7 @@
     GT: { code: 'GTQ', usdOption: true, providers: [
       { name: 'Remitly', site: 'Remitly', url: R, recv: 'bank', cur: 'local', flat: 1.99, m: 0.0216, wb: true },
       { name: 'Remitly', site: 'Remitly', url: R, recv: 'cash', cur: 'local', flat: 2.99, m: 0.0216, wb: true },
-      { name: 'Wise', site: 'Wise', url: W, recv: 'bank', cur: 'local', fees: [null, null, 36.04, null], m: 0, only1000: true },
+      { name: 'Wise', site: 'Wise', url: W, recv: 'bank', cur: 'local', fees: [null, null, 37.45, null], m: 0, only1000: true },
       { name: 'Félix Pago', site: 'Félix Pago', url: F, recv: 'bank', cur: 'local', flat: 2.99, m: null },
       { name: 'Félix Pago', site: 'Félix Pago', url: F, recv: 'cash', cur: 'local', flat: 4.98, m: null },
       { name: 'Remitly', site: 'Remitly', url: R, recv: 'bank', cur: 'usd', fees: [4.99, 8.99, 13.99, 23.99], m: 0 }
@@ -108,22 +110,22 @@
       { name: 'Remitly', site: 'Remitly', url: R, recv: 'bank', cur: 'usd', fees: [4.09, 8.49, 13.99, 24.99], m: 0 }
     ], others: ['Ria'] },
     MX: { code: 'MXN', usdOption: false, providers: [
-      { name: 'Remitly', site: 'Remitly', url: R, recv: 'bank', cur: 'any', fees: [1.99, 0.99, 0.99, 0.99], m: null },
-      { name: 'Remitly', site: 'Remitly', url: R, recv: 'cash', cur: 'any', fees: [3.99, 2.99, 2.99, 2.99], m: null },
+      { name: 'Remitly', site: 'Remitly', url: R, recv: 'bank', cur: 'any', flat: 1.99, m: null },
+      { name: 'Remitly', site: 'Remitly', url: R, recv: 'cash', cur: 'any', flat: 3.99, m: null },
       { name: 'Wise', site: 'Wise', url: W, recv: 'bank', cur: 'any', fees: [null, null, 7.67, null], m: 0, only1000: true },
-      { name: 'Finabien Paisano', site: 'gob.mx/finabien', url: 'https://www.gob.mx/finabien', recv: 'bank', cur: 'any', flat: 2.99, m: null },
-      { name: 'Walmart2Walmart', site: 'Walmart', url: 'https://www.walmart.com/cp/send-money-to-mexico/6148944', recv: 'cash', cur: 'any', flat: 2.5, m: null, from: true, cashOK: true }
+      { name: 'Finabien Paisano', site: 'gob.mx/finabien', url: 'https://www.gob.mx/finabien', recv: 'bank', cur: 'any', flat: 2.99, m: null, d: 'sep29' },
+      { name: 'Walmart2Walmart', site: 'Walmart', url: 'https://www.walmart.com/cp/send-money-to-mexico/6148944', recv: 'cash', cur: 'any', fees: [2.5, 2.5, 5, null], m: null, from: true, cashOK: true }
     ], others: ['Ria', 'MoneyGram', 'Western Union', 'Xoom', 'Intermex', 'Viamericas', 'Vigo'] },
     NI: { code: 'USD', usdOption: false, providers: [
-      { name: 'Remitly', site: 'Remitly', url: R, recv: 'bank', cur: 'any', fees: [5.09, 9.24, 14.49, 24.99], m: 0 },
+      { name: 'Remitly', site: 'Remitly', url: R, recv: 'bank', cur: 'any', fees: [5.09, 9.49, 14.99, 25.99], m: 0 },
       { name: 'Remitly', site: 'Remitly', url: R, recv: 'cash', cur: 'any', fees: [5.09, 9.49, 14.99, 25.99], m: 0 }
     ], others: [] },
     CR: { code: 'CRC', usdOption: true, providers: [
       { name: 'Remitly', site: 'Remitly', url: R, recv: 'bank', cur: 'local', flat: 3.99, m: null },
       { name: 'Remitly', site: 'Remitly', url: R, recv: 'cash', cur: 'local', flat: 3.99, m: null },
       { name: 'Wise', site: 'Wise', url: W, recv: 'bank', cur: 'local', fees: [null, null, 20.57, null], m: 0, only1000: true },
-      { name: 'Félix Pago', site: 'Félix Pago', url: F, recv: 'bank', cur: 'local', flat: 2.99, m: null },
-      { name: 'Félix Pago', site: 'Félix Pago', url: F, recv: 'cash', cur: 'local', flat: 4.98, m: null },
+      { name: 'Félix Pago', site: 'Félix Pago', url: F, recv: 'bank', cur: 'local', flat: 2.99, m: null, from: true },
+      { name: 'Félix Pago', site: 'Félix Pago', url: F, recv: 'cash', cur: 'local', flat: 4.98, m: null, from: true },
       { name: 'Remitly', site: 'Remitly', url: R, recv: 'bank', cur: 'usd', fees: [2.99, 4.99, 8.99, 9.99], m: 0 }
     ], others: ['Xoom', 'Western Union', 'Ria', 'MoneyGram', 'Boss Money', 'WorldRemit'] }
   };
@@ -177,7 +179,7 @@
         bestLabel: allPriced ? T.best : T.bestConfirmed,
         meta: (p.recv === 'bank' ? T.bank : T.cash) + ' · ' + (cur === 'usd' || cty.code === 'USD' ? 'USD' : cty.code),
         totalText: totalText, breakdown: breakdown,
-        src: T.verified.replace('{site}', p.site) + (p.wb ? T.wbFx : ''),
+        src: T.verified.replace('{site}', p.site).replace('{date}', T.dates[p.d || 'oct21']) + (p.wb ? T.wbFx : ''),
         cta: T.go.replace('{name}', p.name)
       };
     });

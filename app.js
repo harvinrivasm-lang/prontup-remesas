@@ -198,7 +198,8 @@
   if (typeof document === 'undefined') return;
 
   // ---------- DOM ----------
-  var state = { lang: 'es', country: 'SV', amount: 500, fund: 'bank', recv: 'bank', cur: 'local' };
+  var preset = document.body.getAttribute('data-country');
+  var state = { lang: 'es', country: PROVIDERS[preset] ? preset : 'SV', amount: 500, fund: 'bank', recv: 'bank', cur: 'local' };
   try { var saved = localStorage.getItem('prontup-lang'); if (saved === 'en' || saved === 'es') state.lang = saved; } catch (e) {}
 
   function el(tag, cls, text) {

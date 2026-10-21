@@ -100,3 +100,21 @@ h1 { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(
 
 .foot { border-top: 1px solid var(--border); padding-top: 12px; display: flex; flex-direction: column; gap: 8px; }
 .foot p { margin: 0; font-size: 13px; color: var(--text-2); }
+
+/* Country guide pages */
+.hero .label a { color: inherit; text-decoration: none; }
+.hero .label a:hover { text-decoration: underline; }
+.country-info { display: flex; flex-direction: column; gap: 12px; }
+.country-info h2, .countries-nav h2 { margin: 8px 0 0; font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.2; }
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--border); border-radius: 16px; }
+table.prices { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 560px; }
+table.prices caption { text-align: left; padding: 14px 16px 4px; font-size: 12px; color: var(--text-2); }
+table.prices th, table.prices td { text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+table.prices thead th { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); }
+table.prices tbody th { font-weight: 500; }
+table.prices tbody tr:last-child th, table.prices tbody tr:last-child td { border-bottom: none; }
+.facts { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+.countries-nav ul { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.countries-nav li a, .countries-nav li span { display: flex; align-items: center; min-height: 44px; padding: 10px 14px; border-radius: 10px; background: var(--card); border: 1px solid var(--border-strong); text-decoration: none; font-weight: 500; font-size: 14px; }
+.countries-nav li span { background: var(--raised); color: var(--text-2); }
+@media (min-width: 560px) { .countries-nav ul { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

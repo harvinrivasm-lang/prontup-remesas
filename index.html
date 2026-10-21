@@ -4,77 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ProntUp Remesas – Compara cuánto cuesta enviar dinero a tu familia</title>
-<meta name="description" content="Compara comisión y tipo de cambio para enviar dinero desde EE. UU. a El Salvador, Guatemala, Honduras, México, Nicaragua y Costa Rica.">
-<meta property="og:title" content="ProntUp Remesas – Envía más. Paga menos.">
-<meta property="og:description" content="Compara lo que de verdad cuesta enviar dinero a tu familia: comisión y tipo de cambio, juntos.">
+<meta name="description" content="Compara comisión y tipo de cambio para enviar dinero desde EE. UU. a El Salvador, Guatemala, Honduras, México, Nicaragua y Costa Rica. Precios verificados.">
+<link rel="canonical" href="https://www.prontup.com/">
+<meta property="og:title" content="ProntUp Remesas – Compara cuánto cuesta enviar dinero a tu familia">
+<meta property="og:description" content="Compara comisión y tipo de cambio para enviar dinero desde EE. UU. a El Salvador, Guatemala, Honduras, México, Nicaragua y Costa Rica. Precios verificados.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://prontup.com/">
+<meta property="og:url" content="https://www.prontup.com/">
+<meta property="og:locale" content="es_US">
 <meta name="theme-color" content="#f5f7ff">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "ProntUp Remesas – Compara cuánto cuesta enviar dinero a tu familia", "description": "Compara comisión y tipo de cambio para enviar dinero desde EE. UU. a El Salvador, Guatemala, Honduras, México, Nicaragua y Costa Rica. Precios verificados.", "url": "https://www.prontup.com/", "inLanguage": "es", "dateModified": "2026-10-21", "isPartOf": {"@type": "WebSite", "name": "ProntUp Remesas", "url": "https://www.prontup.com/"}}</script>
 </head>
 <body>
 <div class="page">
-
 <header class="top">
-  <a class="brand" href="/" aria-label="ProntUp">
-    <svg width="30" height="30" viewBox="0 0 48 48" fill="none" aria-hidden="true"><defs><linearGradient id="pmk" x1="4" y1="3" x2="44" y2="45" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#005bc5"/><stop offset="100%" stop-color="#00b4fc"/></linearGradient></defs><path d="M24 3L44 21H38V45H10V21H4L24 3Z" fill="url(#pmk)"/><path d="M24 10L33 21H28.5V37H19.5V21H15L24 10Z" fill="white"/></svg>
-    <span class="wordmark">ProntUp</span>
-    <span class="label" data-t="tag">Remesas</span>
-  </a>
+  <a class="brand" href="/" aria-label="ProntUp"><svg width="30" height="30" viewBox="0 0 48 48" fill="none" aria-hidden="true"><defs><linearGradient id="pmk" x1="4" y1="3" x2="44" y2="45" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#005bc5"/><stop offset="100%" stop-color="#00b4fc"/></linearGradient></defs><path d="M24 3L44 21H38V45H10V21H4L24 3Z" fill="url(#pmk)"/><path d="M24 10L33 21H28.5V37H19.5V21H15L24 10Z" fill="white"/></svg><span class="wordmark">ProntUp</span><span class="label" data-t="tag">Remesas</span></a>
   <div class="langs" id="langs"></div>
 </header>
-
 <main>
   <section class="hero">
     <h1><span data-t="title1">Envía más.</span><br><span class="accent" data-t="title2">Paga menos.</span></h1>
     <p class="lead" data-t="sub">Compara lo que de verdad cuesta enviar dinero a tu familia: comisión y tipo de cambio, juntos.</p>
   </section>
 
-  <section class="panel" aria-label="Opciones">
+  <section class="panel" aria-label="Comparador">
+    <div class="field"><div class="label" data-t="qCountry">¿A dónde envías?</div><div class="grid2" id="countries"></div></div>
     <div class="field">
-      <div class="label" data-t="qCountry">¿A dónde envías?</div>
-      <div class="grid2" id="countries"></div>
-    </div>
-    <div class="field">
-      <div class="row-between">
-        <div class="label" data-t="qAmount">¿Cuánto envías?</div>
-        <div class="amount"><span id="amountText">$500</span> <small>USD</small></div>
-      </div>
+      <div class="row-between"><div class="label" data-t="qAmount">¿Cuánto envías?</div><div class="amount"><span id="amountText">$500</span> <small>USD</small></div></div>
       <div class="grid4" id="amounts"></div>
     </div>
-    <div class="field">
-      <div class="label" data-t="qFund">¿Cómo pagas?</div>
-      <div class="row" id="funds"></div>
-    </div>
-    <div class="field">
-      <div class="label" data-t="qRecv">¿Cómo recibe tu familia?</div>
-      <div class="row" id="recvs"></div>
-    </div>
-    <div class="field" id="curBlock" hidden>
-      <div class="label" data-t="qCur">Recibe en</div>
-      <div class="row" id="curs"></div>
-    </div>
+    <div class="field"><div class="label" data-t="qFund">¿Cómo pagas?</div><div class="row" id="funds"></div></div>
+    <div class="field"><div class="label" data-t="qRecv">¿Cómo recibe tu familia?</div><div class="row" id="recvs"></div></div>
+    <div class="field" id="curBlock" hidden><div class="label" data-t="qCur">Recibe en</div><div class="row" id="curs"></div></div>
   </section>
-
   <p class="banner warn" id="cashBanner" hidden data-t="cashBanner"></p>
   <p class="banner info" id="note" hidden></p>
-
   <section class="results" aria-live="polite">
     <h2 id="resultsTitle"></h2>
     <p class="muted small" data-t="sortedBy"></p>
     <div id="results" class="cards"></div>
     <p class="empty" id="empty" hidden></p>
   </section>
-
   <section class="panel others" id="othersBlock">
     <div class="label" data-t="others"></div>
     <ul class="pills" id="others"></ul>
     <p class="muted small" data-t="othersNote"></p>
   </section>
+<section lang="es"><nav class="countries-nav" aria-label="Guías por país"><h2>Guías por país</h2><ul><li><a href="/enviar-dinero-a-el-salvador">Enviar a El Salvador</a></li><li><a href="/enviar-dinero-a-guatemala">Enviar a Guatemala</a></li><li><a href="/enviar-dinero-a-honduras">Enviar a Honduras</a></li><li><a href="/enviar-dinero-a-mexico">Enviar a México</a></li><li><a href="/enviar-dinero-a-nicaragua">Enviar a Nicaragua</a></li><li><a href="/enviar-dinero-a-costa-rica">Enviar a Costa Rica</a></li></ul></nav></section>
 
   <section class="edu">
     <div class="label" data-t="eduTag">Guía</div>
@@ -82,22 +62,19 @@
     <p data-t="eduBody"></p>
     <a class="cta-outline" href="#guia" data-t="eduCta">Leer la guía</a>
   </section>
-
   <section class="guide" id="guia">
     <h2 data-t="guideTitle"></h2>
     <ol id="guideList"></ol>
   </section>
 </main>
-
 <footer class="foot">
-  <p data-t="disclosure"></p>
+  <p data-t="disclosure">Podemos ganar una comisión si usas nuestros enlaces. Esto no cambia tu precio ni el orden de los resultados.</p>
   <p data-t="updated"></p>
   <p data-t="notAdvice"></p>
-  <p class="small">© 2026 ProntUp · prontup.com · <a href="privacidad.html" data-t="privacy">Privacidad</a></p>
+  <p class="small">© 2026 ProntUp · prontup.com · <a href="/privacidad" data-t="privacy">Privacidad</a></p>
 </footer>
-
 </div>
 <noscript><p class="banner warn">Activa JavaScript para usar el comparador. / Turn on JavaScript to use the comparison.</p></noscript>
-<script src="app.js"></script>
+<script src="/app.js"></script>
 </body>
 </html>
